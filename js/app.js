@@ -4,6 +4,11 @@ const loadData = async () => {
       // input field data collect
       const cityInput = document.getElementById('city-search');
       const cityName = cityInput.value;
+      // validation
+      if (cityInput.value === ''){
+            const errMsg = window.alert('Please Input A City Name');
+            return errMsg;
+      } 
 
       // api fetch
       fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=9f8b15de3a424f48d19da7d2ea4b5c1d`)
