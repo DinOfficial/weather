@@ -5,8 +5,9 @@ const loadData = async () => {
       const cityInput = document.getElementById('city-search');
       const cityName = cityInput.value;
       // validation
-      if (cityInput.value === ''){
+      if (!isNaN(cityInput.value)){
             const errMsg = window.alert('Please Input A City Name');
+            cityInput.value = '';
             return errMsg;
       } 
 
