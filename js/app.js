@@ -22,12 +22,11 @@ const loadData = async () => {
       // display api data in ui
 const displayData = weather => {
       // city name
-
-      if (document.getElementById('city-search').value !== weather.name) {
-            const errorM = window.alert('please Input City Name');
-            return errorM;
-      } else {
-            document.getElementById('city').innerText = weather.name;
+      const city = document.getElementById('city').innerText = weather.name;
+      if (city === undefined) {
+            window.alert('Input City Name');
+            document.getElementById('weather-container').style.display = 'none';
+            location.reload();
       }
       // weather temparature convert from kelvin to celcius
       document.getElementById('temp').innerText = parseInt(weather.main.temp - 273.15);
